@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@import 'core.scss';
+
+/*********************************************************************
+*** LOGIN PAGE *******************************************************
+*********************************************************************/
+#main-section .login-container .form-buttons a {
+	color: $linkForgotPassword;
+	text-decoration: underline;
+}
+
+/*********************************************************************
+*** WORKFLOWS (LIST) PAGE ********************************************
+*********************************************************************/
+.approval-workflows-container .ico-add {
+	float: right;
+	padding: 0px;
+	font-weight: 700;
+}
+.approval-workflows-container .inner-row {
+	margin-bottom: 1em;
+}
+.approval-workflows-container .panel-group .panel .panel-footer {
+	border-top: none;
+}
+
+/*********************************************************************
+*** WORKFLOWS (SINGLE) PAGE ******************************************
+*********************************************************************/
+.approval-workflows-form-container .select[multiple=multiple] {
+	height: 200px;
+}
+
+/*********************************************************************
+*** PCFC USERS (LIST) PAGE *******************************************
+*********************************************************************/
+.manage-internal-users-container .ico-add {
+	float: right;
+	padding: 0px;
+	font-weight: 700;
+}
+
+/*********************************************************************
+*** PCFC USERS (FORM) PAGE *******************************************
+*********************************************************************/
+.manage-internal-users-form-container #generate-password-value {
+	margin-left: 15px;
+	text-align: left;
+	font-weight: bold;
+	color: $successColor;
+}
+
+/*********************************************************************
+*** PASSES LIST (INTERNAL) PAGE **************************************
+*********************************************************************/
+.passes-list-internal-container .pcfc-table-td {
+	cursor: pointer;
+}
+
+/*********************************************************************
+*** PASS FORM (INTERNAL) PAGE ****************************************
+*********************************************************************/
+.pcfc-pass-form-container .panel-pass .row,
+.pcfc-pass-form-container .panel-visitors .pcfc-table-tr-fullinfo .inner-row,
+.pcfc-pass-form-container .panel-approval-history .row,
+.pcfc-pass-form-container .panel-visitor .row {
+	float: left;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.pcfc-pass-form-container .pass-attachment-image-preview {
+	width: 100%;
+	height: 500px;
+	margin-top: 1em;
+	background-color: #ffffff;
+	border: 1px solid $fieldBorderColor;
+}
+
+/*********************************************************************
+*** USERS (LIST) PAGE ************************************************
+*********************************************************************/
+.manage-users-container .ico-add {
+	float: right;
+	padding: 0px;
+	font-weight: 700;
+}
+.manage-users-container .pcfc-table-th:first-child,
+.manage-users-container .pcfc-table-td:first-child {
+	text-align: center;
+}
+
+
+/*********************************************************************
+*** APPLY FOR PASS PAGE **********************************************
+*********************************************************************/
+/* Visitor(s) information */
+.apply-container .panel-visitors {
+
+	// Created visitors table
+	& .created-visitors {
+		float: left;
+		width: 100%;
+		margin-bottom: 1em;
+		& .created-visitor {
+			float: left;
+			width: 100%;
+			border-bottom: 1px solid $fieldBorderColor;
+		}
+	}
+	
+	// Aknowledgment
+	& #acknowledgment-lbl {
+		width: 100%;
+		padding: 2em 0;
+		text-align: center;
+		
+		// Checkbox
+		& #acknowledgment {
+			display: inline;
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+/* Payment */
+.apply-container .payment-total {
+	float: right;
+	color: $successColor;
+}
+
+
+
+
+
+
+

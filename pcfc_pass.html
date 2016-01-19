@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PCFC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/libs/jquery/jquery-ui-1.11.4.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/libs/bootstrap/css/bootstrap-3.3.6.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/core.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="assets/css/core-ie.css"
+		<link rel="stylesheet" type="text/css" href="assets/css/custom-ie.css"
+	<![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<nav class="navbar navbar-fixed-top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-top-navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="/">PCFC Gate Pass</a>
+			</div>
+			<div class="collapse navbar-collapse" id="main-top-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/pcfc/index.html">Home</a></li>
+					<li><a href="/pcfc/login.html">Login</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">PCFC User Menu<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pcfc/pcfc_roles_to_services.html">Roles to Services</a></li>
+							<li><a href="/pcfc/pcfc_workflows.html">Workflows</a></li>
+							<li><a href="/pcfc/pcfc_workflow.html">Create Workflow</a></li>
+							<li><a href="/pcfc/pcfc_users.html">Users List</a></li>
+							<li><a href="/pcfc/pcfc_user.html">Create User</a></li>
+							<li><a href="/pcfc/pcfc_passes.html">Passes List</a></li>
+							<li><a href="/pcfc/pcfc_pass.html">Single Pass</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Regular User Menu<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pcfc/register.html">Registration</a></li>
+							<li><a href="/pcfc/users.html">Company Users List</a></li>
+							<li><a href="/pcfc/user.html">Create Company User</a></li>
+							<li><a href="/pcfc/pcfc_passes.html">Company Passes List</a></li>
+							<li><a href="/pcfc/pcfc_pass.html">Company Single Pass</a></li>
+							<li><a href="/pcfc/apply.html">Apply for pass</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Content -->
+	<section id="main-section">
+		<div class="container-fluid main-container pcfc-pass-form-container">
+		
+			<!-- Alerts -->
+			<div class="alerts-container"></div>
+			
+			<!-- Form -->
+			<form action="#" role="form" class="form-horizontal">
+				<div class="panel-group">
+					
+					<!-- Pass Information -->
+					<div class="panel panel-default panel-pass">
+						<div class="panel-head">
+							Pass Information
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Visitor No</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3 pass-visitor-no">0123456789</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Port</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Jebel Ali
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Entry Gate</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Any Gate
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Pass Type</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Temporary
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Pass Duration</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									1 Month
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Visit Reason</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Training
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Date Of Visit</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									12/05/2016
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Status</span>
+								</div>
+								<div class="col-md-9 col-sm-9 col-xs-9 pass-status pass-status-rejected">
+									Rejected by CID
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Equipment Information -->
+					<div class="panel panel-default panel-equipment">
+						<div class="panel-head">
+							Equipment Information
+						</div>
+						<div class="panel-body pcfc-table">
+							
+							<!-- Table head -->
+							<div class="row pcfc-table-tr">
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-th">
+									Equipment Name
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-th">
+									Equipment Quantity
+								</div>
+							</div>
+						
+							<!-- Table rows -->
+							<div class="row pcfc-table-tr">
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-td">
+									Nails
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-td">
+									12'350
+								</div>
+							</div>
+							<div class="row pcfc-table-tr">
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-td">
+									Wooden pallets
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 pcfc-table-td">
+									500
+								</div>
+							</div>
+						</div>
+					</div>
+						
+					<!-- Visitor Information -->
+					<div class="panel panel-default panel-visitor">
+						<div class="panel-head">
+							Visitor Information
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Title</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									Mr
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">First Name</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									John
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Last Name</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									Doe
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Nationality</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									USA
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Mobile Number</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									050 1234567
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Phone Number</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									N/A
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Email</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									N/A
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Designation</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									ADMINISTRATION OFFICER
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Company Name</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									Company ABC FZE
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Company Address</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									UAE, JAFZA, Bldg. 123
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Vehicle Number</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									R 12345
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Photo</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<a href="#" class="pass-visitor-attachment-type-01">David Black Photo</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Passport</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<a href="#" class="pass-visitor-attachment-type-01">ET123456</a>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<span class="pcfc-label">Visa</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-12">
+									<a href="#" class="pass-visitor-attachment-type-01">2016/123/123456789</a>
+								</div>
+							</div>
+						</div> <!-- End of panel-body -->
+					</div> <!-- End of panel Visitor Information -->
+					
+					<!-- Host Company Information -->
+					<div class="panel panel-default panel-host-company">
+						<div class="panel-head">
+							Host Company Information
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Company Name</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Company XYZ FZC
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									<span class="pcfc-label">Person Name</span>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+									Michael White
+								</div>
+							</div>
+						</div>
+					</div> <!-- End of Host Company Information -->
+				
+					<!-- Approval History -->
+					<div class="panel panel-default panel-approval-history">
+						<div class="panel-head">
+							Approval History
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									25/12/2015: approved by CID
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									26/12/2015: approved by Dubai Police
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									26/12/2015: approved by PCFC Help Desk user: Michael Doe
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									28/12/2015: rejected by John Doe with comments: "Rejection reason..."
+								</div>
+							</div>
+						</div>
+					</div> <!-- End of Approval History -->
+				
+				</div> <!-- End of pantl-group -->
+				
+				<!-- Buttons -->
+				<div class="conainer-fluid form-buttons">
+					<input type="button" class="btn btn-approve validate-form" value="Approve" />
+					<input type="button" class="btn btn-reject validate-form" value="Reject" />
+					<input type="button" class="btn btn-return validate-form" value="Return" />
+					<input type="button" class="btn btn-default" value="Print" />
+				</div>
+				<!-- Success msg -->
+				<div class="form-success-msg hidden">
+					Pass successfully created!
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-left col-md-3 col-sm-6 col-xs-6">
+			<a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a>
+		</div>
+		<div class="footer-center col-md-6 hidden-sm hidden-xs">
+			This site is best viewed with latest versions of Google Chrome, Firefox and Internet Explorer version 10 and above
+		</div>
+		<div class="footer-right col-md-3 col-sm-6 col-xs-6">
+			&copy; 2015 PCFC Security Department
+		</div>
+	</footer>
+	<!-- Resources -->
+	<script type="text/javascript" src="assets/libs/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="assets/libs/jquery/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="assets/libs/bootstrap/js/bootstrap-3.3.6.min.js"></script>
+	<script type="text/javascript" src="assets/js/core.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+</body>
+</html>

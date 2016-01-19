@@ -1,0 +1,588 @@
+@charset "UTF-8";
+
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'compass/utilities/general/clearfix';
+
+// Base
+$baseColorBlue: 				#0074c2;
+$baseColorBlueDarker: 	#0865a5;
+$baseColorBlueLighter: 	#0078c2;
+$baseColorGray:					#eeeeee;
+
+// Font
+$fontColor:							#000000;
+$fontColorWhite:				#ffffff;
+$fontSize: 							14px;
+$fontFamily:						Arial, Helvetica, sans-serif;
+
+// Links
+$linkColor:							#b82329;
+$linkColorHover:				#fdb02d;
+$linkForgotPassword:		#888888;
+
+// Field
+$fieldTextColor:				#5c5c5c;
+$fieldBorderColor:			#e1e1e1;
+$fieldPlaceholderColor: #cccccc;
+$fieldBorderRadius:			4px;
+$fieldBGColor:					#f1f1f1;
+
+// Button
+$btnColor:							#ffffff;
+$btnDefaultColor:				#6f6f6f;
+$btnSubmitColor:				$baseColorBlue;
+$btnResetColor:					$btnDefaultColor;
+$btnSearchColor:				#aaaaaa;
+$btnApproveColor:				#3c763d;
+$btnRejectColor:				#a94442;
+$btnReturnColor:				#8a6d3b;
+
+// Messages
+$infoBG:								#d9edf7;
+$infoColor:							#31708f;
+$warningBG:							#fcf8e3;
+$warningColor:					#8a6d3b;
+$errorColor:						#a94442;
+$successBG:							#dff0d8;
+$successColor:					#3c763d;
+
+
+/*********************************************************************
+*** GLOBAL ***********************************************************
+*********************************************************************/
+@mixin bp-xs {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin bp-not-xs {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin bp-sm {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin bp-md {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin bp-lg {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin field-style {
+	color: $fieldTextColor;
+	&:focus {
+		@include field-style-focus;
+	}
+}
+@mixin field-style-focus {
+	border: 1px solid lighten($baseColorBlue, 5%);
+	@include box-shadow(1px 1px 3px lighten($baseColorBlue, 25%));
+}
+@mixin button-styles($color, $borderColor, $bgColor, $hoverColor, $hoverBorderColor, $hoverBGColor) {
+	border: 1px solid $borderColor;
+	background-color: $bgColor;
+	color: $color;
+	&:hover {
+		border: 1px solid $hoverBorderColor;
+		background-color: $hoverBGColor;
+		color: $hoverColor;
+	}
+}
+
+/* Defaults */
+b, strong {
+	font-weight: 700;
+}
+
+/* LISTS */
+ul, ol {
+	margin-left: 1em;
+}
+#main-section ul li, 
+#main-section ol li {
+	margin: 6px 0px;
+}
+
+/* INPUT TEXT/PWD */
+input[type="text"],
+input[type="password"] {
+	color: $fieldTextColor;
+}
+
+/* RADIO BUTTONS */
+.radio-group input[type="radio"] {
+	display: block;
+	margin: 8px 0px 0px;
+}
+
+/* SELECT */
+.select.has-select-all option:first-child {
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px dashed rgba($fontColor, 0.25);
+	font-style: italic;
+}
+
+/* BUTTON */
+.btn {
+	background: transparent none;
+	
+	// Buttons
+	&.btn-default {
+		@include button-styles($btnColor, $btnDefaultColor, $btnDefaultColor, $btnColor, darken($btnDefaultColor, 10%), darken($btnDefaultColor, 10%));
+	}
+	&.btn-submit {
+		@include button-styles($btnColor, $btnSubmitColor, $btnSubmitColor, $btnColor, darken($btnSubmitColor, 10%), darken($btnSubmitColor, 10%));
+	}
+	&.btn-reset,
+	&.btn-cancel {
+		@include button-styles($btnResetColor, $btnResetColor, $btnColor, $btnColor, $btnResetColor, $btnResetColor);
+	}
+	&.btn-approve {
+		@include button-styles($btnColor, $successColor, $successColor, $btnColor, darken($successColor, 10%), darken($successColor, 10%));
+	}
+	&.btn-reject {
+		@include button-styles($btnColor, $errorColor, $errorColor, $btnColor, darken($errorColor, 10%), darken($errorColor, 10%));
+	}
+	&.btn-return {
+		@include button-styles($btnColor, $warningColor, $warningColor, $btnColor, darken($warningColor, 10%), darken($warningColor, 10%));
+	}
+	&.btn-search {
+		@include button-styles($btnColor, $btnSearchColor, $btnSearchColor, $btnColor, darken($btnSearchColor, 10%), darken($btnSearchColor, 10%));
+	}
+	
+	// Button Icons
+	%ico-base {
+		padding: 0px;
+		&.active {
+			box-shadow: none;
+		}
+	}
+	&.ico-add,
+	&.ico-ok {
+		@extend %ico-base;
+		color: $successColor;
+	}
+	&.ico-delete,
+	&.ico-reject {
+		@extend %ico-base;
+		color: $errorColor;
+	}
+	&.ico-edit,
+	&.ico-return {
+		@extend %ico-base;
+		color: $warningColor;
+	}
+}
+
+/* CUSTOM TABLE */
+.pcfc-table {
+	padding-top: 0;
+	padding-bottom: 0;
+	
+	// TR
+	& .pcfc-table-tr {
+		@include pie-clearfix;
+		border-bottom: 1px solid $fieldBorderColor;
+		
+		// TR >> TD
+		& .pcfc-table-td {
+			line-height: 1.5em;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			// TD action icons
+			&.row-actions {
+				text-align: center;
+				&.form-group {
+					margin-top: 0.5em; // form-gourp have elements like input, so line height is larger and additional margin req. to valign
+				}
+				& .btn {
+					margin-left: 1.5em;
+					padding: 0px;
+				}
+			}
+		}
+		
+		// TR >> TH
+		& .pcfc-table-th {
+			@extend .pcfc-table-td;
+			font-weight: bold;
+			//background-color: lighten($baseColorGray, 1%);
+		}
+		
+		// Collapsible row (shown on click)
+		&.pcfc-table-tr-clickable { // trigger
+			cursor: pointer;
+		}
+		&.pcfc-table-tr-fullinfo { // hidden data
+			background: $infoBG none;
+		}
+	}
+	
+	// Striped table
+	&.pcfc-table-striped > .pcfc-table-body > .pcfc-table-tr:not(.hidden):nth-of-type(2n+1),
+	&.pcfc-table-with-fullinfo.pcfc-table-striped > .pcfc-table-body > .pcfc-table-tr:not(.hidden):nth-of-type(4n+1) { // striped pcfc table
+		background-color: lighten($baseColorGray, 4%);
+	}
+	
+	// Hover effect
+	&.pcfc-table-hover > .pcfc-table-body > .pcfc-table-tr:not(.pcfc-table-tr-fullinfo):hover { // pcfc table with hover effect
+		background-color: rgba($baseColorBlue, 0.3);
+	}
+	
+	// Remove last TR border, when table takes the whole panel
+	&.panel-body .pcfc-table-body .pcfc-table-tr:last-child { 
+		border-bottom: none;
+	}
+}
+
+/* LABEL */
+.pcfc-label {
+	font-weight: bold;
+}
+
+/* PASS STATUSES */
+.pass-status {
+	font-weight: bold;
+}
+.pass-status-pending {
+	color: $infoColor;
+}
+.pass-status-rejected {
+	color: $errorColor;
+}
+.pass-status-returned {
+	color: $warningColor;
+}
+.pass-status-ready-for-printing {
+	color: $successColor;
+}
+
+/* PAGE MSGs CONTAINER */
+.alerts-container {
+	& .alert:last-child {
+		margin-bottom: 3em;
+	}
+}
+
+/*** BOOTSTRAP ******************************************************/
+/* PANEL */
+.panel-group {
+	& .panel {
+		border: 1px solid $fieldBorderColor;
+		
+		& + .panel {
+			margin-top: 1.5em;
+		}
+		& .panel-head {
+			padding: 1em;
+			border-bottom: 1px solid $fieldBorderColor;
+			border-top-left-radius: $fieldBorderRadius;
+			border-top-right-radius: $fieldBorderRadius;
+			background-color: $baseColorGray;
+			font-size: 1.25em;
+			font-weight: bold;
+			color: $baseColorBlue;
+		}
+		& .panel-body {
+			&.dt-table { // no padding if dt-table takes the whole panel
+				padding: 0;
+			}
+		}
+		& .panel-footer {
+			padding: 1em;
+			border-top: 1px solid $fieldBorderColor;
+			background-color: $baseColorGray;
+			& .pagination-container {
+				& .pagination {
+					margin: 0.5em 0em;
+					& > li > a, 
+					& > li > span {
+						color: $baseColorBlue;
+					}
+				}
+				& .btn-group {
+					&.items-per-page .btn {
+						border: 1px solid #dddddd;
+						color: $fieldTextColor;
+						&:hover {
+							background-color: #eeeeee;
+						}
+					}
+					&.open .dropdown-toggle,
+					& .dropdown-toggle:active {
+						box-shadow: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* FORM */
+.form,
+.form-horizontal {
+
+	// Row
+	& .row {
+	
+		&:last-child .form-group {
+			//margin-bottom: 0px;
+		}
+		
+		// Form group
+		& .form-group {
+			// Label
+			& .control-label {
+				font-weight: 700;
+				&.text-align-left {
+					text-align: left;
+				}
+			}
+			// Control
+			& .form-control {
+				//@include field-style;
+			}
+			// Required feild
+			&.required {
+				& .control-label::after {
+					content: "*";
+					color: $errorColor;
+				}
+			}
+			// Field error msg container
+			&.has-error {
+				& .control-label {
+					color: $errorColor;
+				}
+				& input[type="text"],
+				& input[type="password"],
+				& textarea {
+					border: 1px solid $errorColor;
+				}
+				& .switch .btn {
+					border-top: 1px solid $errorColor;
+					border-bottom: 1px solid $errorColor;
+					&:first-child {
+						border-left: 1px solid $errorColor;
+					}
+					&:last-child {
+						border-right: 1px solid $errorColor;
+					}
+				}
+			}
+		}
+	}
+		
+	// Form buttons
+	& .form-buttons {
+		text-align: right;
+	}
+	.form-buttons a + a,
+	.form-buttons a + input,
+	.form-buttons input + a,
+	.form-buttons input + input {
+		margin-left: 1em;
+	}
+}
+.form-horizontal .row .form-group .control-label {
+	padding: 0.5em 0 0.5em 15px;
+}
+
+/* GLYPHS */
+.glyphicon-plus {
+	color: $successColor;
+}
+.glyphicon-pencil {
+	color: $warningColor;
+}
+.glyphicon-remove {
+	color: $errorColor;
+}
+
+/*** COMPONENTS *****************************************************/
+/* MODAL */
+.modal .alert {
+	margin-bottom: 0px;
+}
+
+/* JQUERY CALENDAR */
+.is-datepicker {
+	cursor: pointer;
+}
+
+/* ASSIGNABLE SELECT OPTIONS */
+.ddl-available-assigned-container .ddl-available-container,
+.ddl-available-assigned-container .ddl-assigned-container {
+	display: table-cell;
+	width: 34%;
+}
+.ddl-available-assigned-container .ddl-available-assigned-controls {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	&.move-h {
+		width: 10%;
+	}
+	&.move-v {
+		width: 1%;
+	}
+	& .btn {
+		width: 100%;
+	}
+}
+
+/* PAGINATION */
+.pagination-container {
+	display: table;
+	padding: 0.5em 0em;
+	& .pagination {
+		display: table-cell;
+		& a {
+			color: $baseColorBlue;
+		}
+	}
+	& .items-per-page {
+		display: table-cell;
+		padding-left: 1em;
+		& button {
+			background-color: #ffffff;
+		}
+	}
+}
+
+
+/*********************************************************************
+*** MAIN LAYOUT ******************************************************
+*********************************************************************/
+body {
+	min-width: 600px;
+	margin: 0px;
+	padding: 0px;
+	background: #e6e6e6 none;
+	font: $fontSize $fontFamily;
+}
+
+/*** HEADER *********************************************************/
+.navbar {
+	height: 3em;
+	background-color: $baseColorBlue;
+	
+	// Logo/Website name
+	& .navbar-header {
+		& .navbar-brand,
+		& .navbar-brand:focus,
+		& .navbar-brand:hover {
+			color: #ffffff;
+		}
+	}
+	
+	// Header menu
+	& .navbar-nav {
+		// Menu margin from navbar-header
+		& > li:first-child {
+			@include bp-not-xs {
+				margin-left: 0.6em;
+			}
+		}
+		// Menu links
+		& li a {
+			color: $fontColorWhite; 
+			&:focus,
+			&:hover {
+				background: inherit;
+				text-decoration: underline;
+			}
+		}
+		// Dropdown menu items
+		& li.dropdown {
+			// Dropdown link itself
+			& a.dropdown-toggle,
+			& a.dropdown-toggle:focus,
+			& a.dropdown-toggle:hover,
+			&.open a.dropdown-toggle {
+				text-decoration: none;
+				color: $fontColorWhite;
+				background-color: $baseColorBlue;
+			}
+			// Dropdown sublinks
+			& .dropdown-menu li a {
+				color: $baseColorBlue;
+				@include bp-xs {
+					color: $fontColorWhite;
+				}
+			}
+		}
+	}
+	
+	// Mobile header menu
+	& .navbar-collapse {
+		background-color: $baseColorBlue;
+	}
+
+	// Mobile header menu icon
+	& .navbar-toggle { 
+		margin: 2px 15px;
+		border: 1px solid #ffffff;
+		
+		// 3 bars inside
+		& .icon-bar {
+			background-color: #ffffff;
+		}
+	}
+}
+
+/*** CONTENT ********************************************************/
+#main-section .main-container {
+	min-height: 400px;
+	margin: 3em 1em;
+	padding: 3em 2em 8em;
+	border: 1px solid #d1d1d1;
+	background: #ffffff none;
+	@media only screen and (max-width : 768px) {
+		margin: 3em 0em;
+	}
+}
+
+/*** FOOTER *********************************************************/
+.footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	padding: 2em;
+	background: $baseColorBlue none;
+	font-size: 0.85em;
+	color: #ffffff;
+	
+	& a,
+	& a:focus,
+	& a:hover {
+		color: #ffffff;
+	}
+	
+	& .footer-left {
+		text-align: left;
+	}
+	& .footer-right {
+		text-align: right;
+	}
+	& .footer-center {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+

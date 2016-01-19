@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PCFC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/libs/jquery/jquery-ui-1.11.4.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/libs/bootstrap/css/bootstrap-3.3.6.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/core.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="assets/css/core-ie.css"
+		<link rel="stylesheet" type="text/css" href="assets/css/custom-ie.css"
+	<![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<nav class="navbar navbar-fixed-top">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">PCFC Gate Pass</a>
+			</div>
+		</nav>
+	</header>
+	<!-- Content -->
+	<section id="main-section">
+		<div class="container-fluid main-container login-container">
+		
+			<!-- Alerts -->
+			<div class="alerts-container"></div>
+			
+			<!-- Form -->
+			<form action="#" role="form" class="form col-md-6 col-md-offset-3">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-head">
+							Login Information
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-md-12 required">
+									<label class="control-label" for="username">
+										Username
+									</label>
+									<input type="text" class="form-control" id="username" placeholder="Enter Username">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-12 required">
+									<label class="control-label" for="password">
+										Password
+									</label>
+									<input type="password" class="form-control" id="password" placeholder="Enter Password">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Buttons -->
+				<div class="conainer-fluid form-buttons">
+					<a href="/pcfc/register.html" class="register">register</a>
+					<a href="#" class="forgot-password">forgot password?</a>
+					<input type="button" class="btn btn-submit validate-form" value="Login" />
+				</div>
+				<!-- Success msg -->
+				<div class="form-success-msg hidden">
+					You were logged in successfully!
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-left col-md-3 col-sm-6 col-xs-6">
+			<a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a>
+		</div>
+		<div class="footer-center col-md-6 hidden-sm hidden-xs">
+			This site is best viewed with latest versions of Google Chrome, Firefox and Internet Explorer version 10 and above
+		</div>
+		<div class="footer-right col-md-3 col-sm-6 col-xs-6">
+			&copy; 2015 PCFC Security Department
+		</div>
+	</footer>
+	<!-- Resources -->
+	<script type="text/javascript" src="assets/libs/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="assets/libs/jquery/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="assets/libs/bootstrap/js/bootstrap-3.3.6.min.js"></script>
+	<script type="text/javascript" src="assets/js/core.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+</body>
+</html>

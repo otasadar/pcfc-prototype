@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PCFC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/libs/jquery/jquery-ui-1.11.4.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/libs/bootstrap/css/bootstrap-3.3.6.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/core.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="assets/css/core-ie.css"
+		<link rel="stylesheet" type="text/css" href="assets/css/custom-ie.css"
+	<![endif]-->
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<nav class="navbar navbar-fixed-top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-top-navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="/">PCFC Gate Pass</a>
+			</div>
+			<div class="collapse navbar-collapse" id="main-top-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/pcfc/index.html">Home</a></li>
+					<li><a href="/pcfc/login.html">Login</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">PCFC User Menu<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pcfc/pcfc_roles_to_services.html">Roles to Services</a></li>
+							<li><a href="/pcfc/pcfc_workflows.html">Workflows</a></li>
+							<li><a href="/pcfc/pcfc_workflow.html">Create Workflow</a></li>
+							<li><a href="/pcfc/pcfc_users.html">Users List</a></li>
+							<li><a href="/pcfc/pcfc_user.html">Create User</a></li>
+							<li><a href="/pcfc/pcfc_passes.html">Passes List</a></li>
+							<li><a href="/pcfc/pcfc_pass.html">Single Pass</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Regular User Menu<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pcfc/register.html">Registration</a></li>
+							<li><a href="/pcfc/users.html">Company Users List</a></li>
+							<li><a href="/pcfc/user.html">Create Company User</a></li>
+							<li><a href="/pcfc/pcfc_passes.html">Company Passes List</a></li>
+							<li><a href="/pcfc/pcfc_pass.html">Company Single Pass</a></li>
+							<li><a href="/pcfc/apply.html">Apply for pass</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Content -->
+	<section id="main-section">
+		<div class="container-fluid main-container apply-container">
+		
+			<!-- Alerts -->
+			<div class="alerts-container"></div>
+			
+			<!-- Form -->
+			<form action="#" role="form" class="form-horizontal">
+				<div class="panel-group">
+	
+					<!-- User Information -->
+					<div class="panel panel-default">
+						<div class="panel-head">
+							User Information
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="person-title">
+										Title
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<select class="select form-control" id="person-title">
+											<option value="1">Mr</option>
+											<option value="2">Ms</option>
+											<option value="3">Mrs</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="first-name">
+										First Name
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="text" class="form-control" id="first-name" placeholder="Enter First Name" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="last-name">
+										Last Name
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="text" class="form-control" id="last-name" placeholder="Enter Last Name" />
+									</div>
+								</div>
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="visitor-email">
+										Email
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="email" class="form-control" id="visitor-email" placeholder="Enter Email" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="mobile-number">
+										Mobile Number
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="text" class="form-control" id="mobile-number" placeholder="Enter Mobile Number" />
+									</div>
+								</div>
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="designation">
+										Designation
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="text" class="form-control" id="designation" placeholder="Enter Designation" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-6 col-sm-12 col-xs-12 required">
+									<label class="col-md-6 col-sm-12 col-xs-12 control-label" for="attachment-01">
+										Attachment
+									</label>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<input type="file" id="attachment-01" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of all panels -->
+				</div>
+				<!-- Buttons -->
+				<div class="conainer-fluid form-buttons">
+					<input type="button" class="btn btn-submit validate-form" value="Create User" />
+					<input type="button" class="btn btn-reset" value="Reset" />
+				</div>
+				<!-- Success msg -->
+				<div class="form-success-msg hidden">
+					User created successfully!
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-left col-md-3 col-sm-6 col-xs-6">
+			<a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a>
+		</div>
+		<div class="footer-center col-md-6 hidden-sm hidden-xs">
+			This site is best viewed with latest versions of Google Chrome, Firefox and Internet Explorer version 10 and above
+		</div>
+		<div class="footer-right col-md-3 col-sm-6 col-xs-6">
+			&copy; 2015 PCFC Security Department
+		</div>
+	</footer>
+	<!-- Resources -->
+	<script type="text/javascript" src="assets/libs/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="assets/libs/jquery/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="assets/libs/bootstrap/js/bootstrap-3.3.6.min.js"></script>
+	<script type="text/javascript" src="assets/js/core.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+</body>
+</html>
